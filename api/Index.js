@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
 import userRoutes from "./routes/user.route.js";
+import authRoutes from "./routes/auth.route.js";
 
 mongoose
   .connect(process.env.MONGO)
@@ -14,6 +15,9 @@ mongoose
   });
 
 const app = express();
+
+// mediator
+app.use(express.json());
 const PORT = 3000;
 
 app.listen(PORT, () => {
@@ -21,3 +25,4 @@ app.listen(PORT, () => {
 });
 
 app.use("/api/user", userRoutes);
+app.use("/api/auth", authRoutes);
