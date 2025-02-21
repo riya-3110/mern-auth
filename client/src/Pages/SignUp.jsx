@@ -56,6 +56,7 @@ export const SignUp = () => {
           className="bg-slate-100 p-4 px-6 f-2xl text-slate-800 outline-blue-300 rounded-lg"
           onChange={handleChange}
           name="username"
+          required
         />
         <input
           type="email"
@@ -63,6 +64,7 @@ export const SignUp = () => {
           className="bg-slate-100 p-4 px-6 f-2xl text-slate-800 outline-blue-300 rounded-lg"
           onChange={handleChange}
           name="email"
+          required
         />
         <input
           type="password"
@@ -70,6 +72,7 @@ export const SignUp = () => {
           className="bg-slate-100 p-4 px-6 f-2xl outline-blue-300 rounded-lg"
           onChange={handleChange}
           name="password"
+          required
         />
         <button
           type="submit"

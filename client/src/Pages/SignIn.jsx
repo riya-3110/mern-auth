@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 export const SignIn = () => {
   const [formData, setFormData] = useState({
-    username: "",
     email: "",
     password: "",
   });
@@ -28,18 +27,12 @@ export const SignIn = () => {
         onSubmit={handleSubmit}
       >
         <input
-          type="text"
-          placeholder="Username"
-          className="bg-slate-100 p-4 px-6 f-2xl text-slate-800 outline-blue-300 rounded-lg"
-          onChange={handleChange}
-          name="username"
-        />
-        <input
           type="email"
           placeholder="Email"
           className="bg-slate-100 p-4 px-6 f-2xl text-slate-800 outline-blue-300 rounded-lg"
           onChange={handleChange}
           name="email"
+          required
         />
         <input
           type="password"
@@ -47,6 +40,7 @@ export const SignIn = () => {
           className="bg-slate-100 p-4 px-6 f-2xl outline-blue-300 rounded-lg"
           onChange={handleChange}
           name="password"
+          required
         />
         <button
           type="submit"
