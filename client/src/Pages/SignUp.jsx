@@ -1,6 +1,5 @@
-import { set } from "mongoose";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +7,7 @@ export const SignUp = () => {
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -35,7 +35,7 @@ export const SignUp = () => {
         throw new Error(data.message || "Signup failed");
       }
       setLoading(false);
-      //  alert("Signup successful!");
+      navigate("/sign-in");
     } catch (error) {
       console.error("Signup Error:", error);
       setError(error.message);
